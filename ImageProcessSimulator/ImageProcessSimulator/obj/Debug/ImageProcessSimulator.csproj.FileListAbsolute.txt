@@ -23,8 +23,6 @@ D:\Works\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimul
 D:\Works\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\Base.dll
 D:\Works\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\Base.pdb
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\ImageProcessSimulator.exe.config
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.exe
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.pdb
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\ImageProcessSimulator.exe
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\ImageProcessSimulator.pdb
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\Base.dll
@@ -46,3 +44,5 @@ D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulato
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.g.resources
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.Properties.Resources.resources
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.csproj.GenerateResource.Cache
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.exe
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.pdb
