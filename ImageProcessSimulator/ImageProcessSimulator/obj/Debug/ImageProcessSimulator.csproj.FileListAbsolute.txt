@@ -22,3 +22,6 @@ D:\Works\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimul
 D:\Works\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.csprojResolveAssemblyReference.cache
 D:\Works\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\Base.dll
 D:\Works\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\Base.pdb
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\bin\Debug\ImageProcessSimulator.exe.config
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.exe
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.pdb
