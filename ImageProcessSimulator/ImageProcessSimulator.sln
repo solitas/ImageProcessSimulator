@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessSimulator", "ImageProcessSimulator\ImageProcessSimulator.csproj", "{F2D798A6-E5C7-465E-8C24-6077F1268C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "Base\Base.csproj", "{851CA119-78BB-466E-8AB5-42ADE809AD64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseTest", "BaseTest\BaseTest.csproj", "{E8DA036E-B720-4DF8-8C42-D20EE665DF3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2D798A6-E5C7-465E-8C24-6077F1268C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D798A6-E5C7-465E-8C24-6077F1268C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D798A6-E5C7-465E-8C24-6077F1268C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D798A6-E5C7-465E-8C24-6077F1268C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851CA119-78BB-466E-8AB5-42ADE809AD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851CA119-78BB-466E-8AB5-42ADE809AD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851CA119-78BB-466E-8AB5-42ADE809AD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851CA119-78BB-466E-8AB5-42ADE809AD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8DA036E-B720-4DF8-8C42-D20EE665DF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8DA036E-B720-4DF8-8C42-D20EE665DF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8DA036E-B720-4DF8-8C42-D20EE665DF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8DA036E-B720-4DF8-8C42-D20EE665DF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
