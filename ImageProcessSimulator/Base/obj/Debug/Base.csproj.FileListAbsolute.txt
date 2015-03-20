@@ -19,14 +19,3 @@ D:\Works\ImageProcessSimulator\Base\bin\Debug\Emgu.Util.xml
 D:\Works\ImageProcessSimulator\Base\obj\Debug\Base.csprojResolveAssemblyReference.cache
 D:\Works\ImageProcessSimulator\Base\obj\Debug\Base.dll
 D:\Works\ImageProcessSimulator\Base\obj\Debug\Base.pdb
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Base.dll
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Base.pdb
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Emgu.CV.Cuda.dll
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Emgu.CV.dll
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Emgu.Util.dll
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Emgu.CV.xml
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Emgu.CV.Cuda.xml
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\bin\Debug\Emgu.Util.xml
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\obj\Debug\Base.csprojResolveAssemblyReference.cache
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\obj\Debug\Base.dll
-D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\Base\obj\Debug\Base.pdb
