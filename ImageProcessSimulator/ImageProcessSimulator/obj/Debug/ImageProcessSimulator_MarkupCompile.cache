@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Works\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\
 ImageProcessSimulator
 none
 false
 DEBUG;TRACE
-D:\Works\ImageProcessSimulator\ImageProcessSimulator\App.xaml
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\App.xaml
 31275772150
 
 13298681660
-17633944751
+171359475665
 MainWindow.xaml;Themes\Generic.xaml;View\BasicWindow.xaml;
 
 False
