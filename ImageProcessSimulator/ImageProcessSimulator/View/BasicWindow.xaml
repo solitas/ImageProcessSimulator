@@ -2,7 +2,6 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:view="clr-namespace:ImageProcessSimulator.View"
-        xmlns:viewModel="clr-namespace:ImageProcessSimulator.ViewModel"
         Title="Default" Height="720" Width="1024"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -22,12 +21,12 @@
                  ItemsSource="{Binding ImageFiles}"
                  SelectedItem="{Binding SelectedFile}"/>
         <StackPanel Grid.Column="1" Margin="0" Grid.Row="2">
-            <Button x:Name="ImageFileAddButton" Content="추가" Command="{Binding FileAddCommand}"/>
-            <Button x:Name="ImageFileRemoveButton" Content="삭제" Command="{Binding FileDelCommand}" CommandParameter="{Binding Path=SelectedItem, ElementName=ImageFileBox}"/>
-            <Button x:Name="ImageFolderAddButton" Content="폴더추가" Command="{Binding FolderAddCommand}"/>
-            <Button x:Name="VideoFileAddButton" Content="비디오열기" Command="{Binding VideoFileAddCommand}"/>
+            <Button x:Name="ImageFileAddButton" Content="Add Image" Command="{Binding FileAddCommand}"/>
+            <Button x:Name="ImageFileRemoveButton" Content="Delete Image" Command="{Binding FileDelCommand}" CommandParameter="{Binding Path=SelectedItem, ElementName=ImageFileBox}"/>
+            <Button x:Name="ImageFolderAddButton" Content="Add Folder" Command="{Binding FolderAddCommand}"/>
+            <Button x:Name="VideoFileAddButton" Content="Open Video" Command="{Binding VideoFileAddCommand}"/>
         </StackPanel>
-        <Grid Margin="0" Grid.Row="1">
+        <Grid Margin="0" Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
