@@ -30,8 +30,15 @@ namespace ImageProcessSimulator.Filters
         {
             Mat gray = org.ToImage<Gray, byte>().Mat;
             CvInvoke.Threshold(gray, dst, _threshold, _maxValue, ThresholdType.Binary);
-;        }
+        }
 
+        public void Apply(Image<Bgr,byte> org, out Image<Bgr,byte> dst)
+        {
+            using (Image<Gray, byte> grayImage = org.Convert<Gray, byte>())
+            {
+                dst = grayImage.ThresholdBinary(new Gray(_threshold), new Gray(_maxValue)).Convert<Bgr,Byte>();
+            }
+        }
         public void Dispose()
         {
 

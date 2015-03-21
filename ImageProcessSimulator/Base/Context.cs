@@ -1,5 +1,6 @@
 ﻿using System;
 using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace Base
 {
@@ -28,6 +29,14 @@ namespace Base
                 throw new NullReferenceException("Filter is null. Please Set Filter in Context");
 
             BaseFilter.Apply(org,dst);
+        }
+
+        public void Apply(Image<Bgr, byte> org, out Image<Bgr, byte> dst)
+        {
+            if (BaseFilter == null)
+                throw new NullReferenceException("Filter is null. Please Set Filter in Context");
+
+            BaseFilter.Apply(org, out dst);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿ImageProcessSimulator
 
 
-winexe
+exe
 C#
 .cs
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\
@@ -12,7 +12,7 @@ DEBUG;TRACE
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\App.xaml
 31275772150
 
-17-2066767081
+18818174497
 171359475665
 MainWindow.xaml;Themes\Generic.xaml;View\BasicWindow.xaml;
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Base;
 using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace BaseTest
 {
@@ -28,6 +29,11 @@ namespace BaseTest
         public void Apply(Mat org, Mat dst)
         {
             // 원본의 레퍼런스를 결과에 연결
+            dst = org;
+        }
+
+        public void Apply(Image<Bgr, byte> org, out Image<Bgr, byte> dst)
+        {
             dst = org;
         }
     }

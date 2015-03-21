@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,10 +27,10 @@ namespace ImageProcessSimulator.ViewModel
     {
         #region "Fields"
 
-        private ObservableCollection<string> _imageFiles;
+        private ObservableCollection<FileInfo> _imageFiles;
         private ObservableCollection<IFilter> _filters;
 
-        private string _selectedFile;
+        private FileInfo _selectedFile;
         private string _selectedVideoFile;
         private IFilter _selectedFilter;
 
@@ -40,10 +41,14 @@ namespace ImageProcessSimulator.ViewModel
         private Context _context;
         private Capture _capture;
 
+        private string _performance;
+        private string _imageSize;
+
+        private Stopwatch _stopwatch = new Stopwatch();
         #endregion
 
         #region "Properties"
-        public ObservableCollection<string> ImageFiles
+        public ObservableCollection<FileInfo> ImageFiles
         {
             set
             {
@@ -58,7 +63,7 @@ namespace ImageProcessSimulator.ViewModel
             get { return _filters; }
         }
 
-        public string SelectedFile
+        public FileInfo SelectedFile
         {
             set
             {
@@ -66,7 +71,7 @@ namespace ImageProcessSimulator.ViewModel
                 {
                     _selectedFile = value;
                     OnPropertyChanged("SelectedFile");
-                    ApplyFilter(_selectedFile);
+                    ApplyFilter(_selectedFile.FullName);
                 }
             }
             get { return _selectedFile; }
@@ -95,12 +100,38 @@ namespace ImageProcessSimulator.ViewModel
             }
             get { return _selectedFilter; }
         }
+
+        public string Performance
+        {
+            set
+            {
+                if (_performance != value)
+                {
+                    _performance = value;
+                    OnPropertyChanged("Performance");
+                }
+            }
+            get { return _performance; }
+        }
+
+        public string ImageSize
+        {
+            set
+            {
+                if (_imageSize != value)
+                {
+                    _imageSize = value;
+                    OnPropertyChanged("ImageSize");
+                }
+            }
+            get { return _imageSize; }
+        }
         #endregion
 
         #region "Constructor"
         public BasicViewModel()
         {
-            _imageFiles = new ObservableCollection<string>();
+            _imageFiles = new ObservableCollection<FileInfo>();
             _filters = new ObservableCollection<IFilter>();
 
             _context = new BasicContext();
@@ -153,7 +184,7 @@ namespace ImageProcessSimulator.ViewModel
         private void FileAddHandler(object parameter)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "TIFF Files (*.tif)|*.tif|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg";
+            dialog.Filter = "JPG Files (*.jpg)|*.jpg|TIFF Files (*.tif)|*.tif|PNG Files (*.png)|*.png";
             dialog.Multiselect = true;
 
             var result = dialog.ShowDialog();
@@ -163,14 +194,17 @@ namespace ImageProcessSimulator.ViewModel
                 foreach (var fileName in dialog.FileNames)
                 {
                     // 파일 추가
-                    _imageFiles.Add(fileName);
+                    var SafefileName = dialog.SafeFileName;
+                    FileInfo info = new FileInfo(fileName);
+
+                    _imageFiles.Add(info);
                 }
             }
         }
 
         private void FileDelHandler(object parameter)
         {
-            var selectedFile = parameter as string;
+            var selectedFile = parameter as FileInfo;
 
             if (selectedFile != null)
             {
@@ -191,7 +225,8 @@ namespace ImageProcessSimulator.ViewModel
 
                 foreach (var file in fileList)
                 {
-                    _imageFiles.Add(file);
+                    FileInfo info = new FileInfo(file);
+                    _imageFiles.Add(info);
                 }
             }
         }
@@ -243,13 +278,41 @@ namespace ImageProcessSimulator.ViewModel
         #region "Apply filter"
         private void ApplyFilter(string file)
         {
-            using (var src = new Mat(file, LoadImageType.Color))
-            using (var dst = new Mat(src.Rows, src.Cols, src.Depth, src.NumberOfChannels))
+            using (var src = new Image<Bgr,byte>(file))
             {
-                _context.Apply(src, dst);
-                _sourceBox.Source = src.ToImage<Bgr, Byte>();
-                _destBox.Source = dst.ToImage<Bgr, Byte>();
+                int width = src.Width;
+                int height = src.Height;
+                var channel = src.NumberOfChannels;
+                var sizeKb = width*height*channel / 1024;
+
+                Image<Bgr, byte> dst;
+
+                
+                try
+                {
+                    _stopwatch.Reset();
+                    _stopwatch.Start();
+                    _context.Apply(src, out dst);
+                    _stopwatch.Stop();
+
+                    _destBox.Source = dst;
+
+                    ImageSize = string.Format("ImageSize = {0}KB", sizeKb);
+                    Performance = string.Format("Performance = {0}ms", _stopwatch.ElapsedMilliseconds);
+                    
+                }
+                catch (Exception)
+                {
+                    _stopwatch.Stop();
+                    _stopwatch.Reset();
+                }
+                finally
+                {
+                    _sourceBox.Source = src;
+                    
+                }
             }
+
         }
 
         private void ApplyFilterForVideo(object sender, EventArgs args)
@@ -258,17 +321,16 @@ namespace ImageProcessSimulator.ViewModel
             {
                 Mat src = new Mat();
                 _capture.Retrieve(src);
-                var dst = new Mat(src.Rows, src.Cols, src.Depth, src.NumberOfChannels);
-
-                _context.Apply(src, dst);
-
-                _sourceBox.Source = src.ToImage<Bgr, Byte>();
-                _destBox.Source = dst.ToImage<Bgr, Byte>();
-
-                dst.Dispose();
-                src.Dispose();
-                Task delay = Task.Delay(33);
-                delay.Wait();
+                using (Image<Bgr, Byte> srcImage = src.ToImage<Bgr, Byte>())
+                {
+                    Image<Bgr, Byte> dst;
+                    _context.Apply(srcImage, out dst);
+                    _sourceBox.Source = src;
+                    _destBox.Source = dst;
+                    dst.Dispose();
+                }
+//                 Task delay = Task.Delay(33);
+//                 delay.Wait();
             }
             catch (NullReferenceException e)
             {
@@ -300,6 +362,7 @@ namespace ImageProcessSimulator.ViewModel
         {
             _filters.Add(new BinaryFilter(80));
             _filters.Add(new EdgeFilter());
+            _filters.Add(new HistogramFilter());
         }
 
 

@@ -46,3 +46,4 @@ D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulato
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.csproj.GenerateResource.Cache
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.exe
 D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\ImageProcessSimulator.pdb
+D:\Works\GitHub\ImageProcessSimulator\ImageProcessSimulator\ImageProcessSimulator\obj\Debug\App.baml
